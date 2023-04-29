@@ -1,0 +1,146 @@
+:root {
+    --cor-display: transparent;
+    --cor-caracteres-teclado: #FFFFFF;
+    --cinza-claro: #70757a;
+    --cor-teclado: #3c4043;
+    --cor-teclado-hover: #4e5357;
+    --cor-body: #202124;
+    --igual: #8ab4f8;
+    --igual-hover: #aac8f8;
+    --botoes-operacoes: #5f6368;
+    --botoes-operacoes-hover: #7e8286;
+}
+
+* {
+    box-sizing: border-box;
+    font-size: 30px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cor-body);
+}
+
+.container {
+    margin: auto 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.display {
+    background-color: var(--cor-display);
+    width: 400px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: var(--cor-caracteres-teclado);
+    border: 1px solid var(--cinza-claro);
+    border-radius: 10px;
+}
+
+.display div {
+    display: flex;
+    justify-content: flex-end;
+    width: 95%;
+    overflow: hidden;
+}
+
+.botoes-container {
+    display: flex;
+    width: 400px;
+    height: 500px;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.botoes-container div {
+    width: calc(25% - 10px);
+    height: calc(20% - 10px);
+    background-color: var(--cor-teclado);
+    color: var(--cor-caracteres-teclado);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+div[data-botao="="] {
+    background-color: var(--igual);
+    color: var(--cor-body);
+}
+
+div[data-botao="="]:hover{
+    background-color: var(--igual-hover);
+}
+
+div[data-botao="("],
+div[data-botao=")"],
+div[data-botao="%"],
+div[data-botao="CE"],
+div[data-botao="÷"],
+div[data-botao="x"],
+div[data-botao="-"],
+div[data-botao="+"] {
+    background-color: var(--botoes-operacoes);
+}
+
+div[data-botao="("]:hover,
+div[data-botao=")"]:hover,
+div[data-botao="%"]:hover,
+div[data-botao="CE"]:hover,
+div[data-botao="÷"]:hover,
+div[data-botao="x"]:hover,
+div[data-botao="-"]:hover,
+div[data-botao="+"]:hover {
+    background-color: var(--botoes-operacoes-hover);
+}
+div[data-botao="0"]:hover,
+div[data-botao="1"]:hover,
+div[data-botao="2"]:hover,
+div[data-botao="3"]:hover,
+div[data-botao="4"]:hover,
+div[data-botao="5"]:hover,
+div[data-botao="6"]:hover,
+div[data-botao="7"]:hover,
+div[data-botao="8"]:hover,
+div[data-botao="9"]:hover,
+div[data-botao="."]:hover {
+    background-color: var(--cor-teclado-hover);
+}
+
+.botoes-container div:active {
+    border: 1px solid var(--cinza-claro);
+}
+
+.botoes-container div:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+
+    .display {
+        margin-left: auto;
+        margin-right: auto;
+        width: 320px;
+        height: 100px;
+    }
+
+    .botoes-container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 320px;
+        height: 400px;
+    }
+
+}
